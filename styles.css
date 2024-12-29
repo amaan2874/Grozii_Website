@@ -1,14 +1,106 @@
-/* Reset styles */
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-  }
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #19b669; /* Green background */
+  border-top: 5vw solid black;
+  border-left: 5vw solid black;
+  border-right: 5vw solid black;
+  margin: 0;
+}
+
+/* Container Styles */
+.logo-container {
+  text-align: center;
+}
+
+/* Content Styles */
+.logo-image {
+  width: 35vw;
+  max-width: 800px;
+  height: auto;
+  margin: 0 auto;
+  /* background-color: red; */
+  margin-top: -45px;
+}
+
+.grozii-title {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 20vw;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: -1vw;
   
-  /* Add background image and make it responsive */
+}
+
+/* .dot{
+  color: black;
+  position: relative;
+  top: -160px;
+  right: 100px;
+} */
+
+.logo-subtitle {
+  font-family: 'TT Chocolates', sans-serif;
+  font-size: 1.7vw;
+  font-weight: 400;
+  color: #fff;
+  letter-spacing: 1vw;
+  margin-top: -1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   body {
-    background: url('./grozee.jpeg') no-repeat center center;
-    background-size: cover;
+    border-top: 8vw solid black;
+    border-left: 8vw solid black;
+    border-right: 8vw solid black;
   }
-  
+
+  .logo-image {
+    width: 60vw;
+    max-width: 500px;
+  }
+
+  .grozii-title {
+    font-size: 16vw;
+    letter-spacing: -0.8vw;
+  }
+
+  .logo-subtitle {
+    font-size: 4vw;
+    letter-spacing: 0.3vw;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    border-top: 10vw solid black;
+    border-left: 10vw solid black;
+    border-right: 10vw solid black;
+  }
+
+  .logo-image {
+    width: 70vw;
+    max-width: 300px;
+  }
+
+  .grozii-title {
+    font-size: 20vw;
+    letter-spacing: -0.5vw;
+  }
+
+  .logo-subtitle {
+    font-size: 5vw;
+    letter-spacing: 0.2vw;
+  }
+}
