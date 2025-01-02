@@ -1,106 +1,271 @@
-/* General Reset */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Body */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background-color: #19b669; /* Green background */
-  border-top: 5vw solid black;
-  border-left: 5vw solid black;
-  border-right: 5vw solid black;
-  margin: 0;
+  padding: 1rem 2rem;
+  background-color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+  position: sticky; /* Ensures it stays at the top */
+  top: 0;
+  z-index: 1000;
+  transition: box-shadow 0.3s ease;
+  border: 0.4rem solid #19b669;
+  border-radius: 12px 12px 0 0;
 }
 
-/* Container Styles */
-.logo-container {
-  text-align: center;
+.navbar:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Hover shadow effect */
 }
 
-/* Content Styles */
-.logo-image {
-  width: 35vw;
-  max-width: 800px;
-  height: auto;
-  margin: 0 auto;
-  /* background-color: red; */
-  margin-top: -45px;
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
 }
 
-.grozii-title {
-  font-family: 'League Spartan', sans-serif;
-  font-size: 20vw;
+.nav-links a {
+  text-decoration: none;
+  color: #19b669; /* Primary green for text */
   font-weight: bold;
-  color: #fff;
-  letter-spacing: -1vw;
-  
+  font-size: 1rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+  padding: 0.5rem 0.8rem;
+  border-radius: 5px;
 }
 
-/* .dot{
-  color: black;
-  position: relative;
-  top: -160px;
-  right: 100px;
-} */
+.nav-links a:hover {
+  color: white;
+  background-color: #19b669;
+  transform: scale(1.05);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Button-like effect */
+}
 
-.logo-subtitle {
-  font-family: 'TT Chocolates', sans-serif;
-  font-size: 1.7vw;
-  font-weight: 400;
-  color: #fff;
-  letter-spacing: 1vw;
-  margin-top: -1rem;
+.logo img {
+  height: 50px;
+  transition: transform 0.3s ease;
+  background-color: #19b669;
+}
+
+.logo img:hover {
+  transform: scale(1.1);
+}
+
+/* Hamburger Menu Styling */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: #19b669;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.hamburger:hover div {
+  background-color: #136b4f; /* Slightly darker green for hover */
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, #19b669, #0f954e);
+  color: white;
+}
+
+.hero-section .content {
+  flex: 1;
+  /* margin-right: 2rem; */
+  animation: fadeIn 1s ease-in-out;
+}
+
+.hero-section .content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  line-height: 3.6rem;
+}
+
+.hero-section .content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  line-height: 1.3rem;
+}
+
+.contact-button {
+  background-color: #19b669;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contact-button:hover {
+  background-color: #f0f0f0;
+  color: #19b669;
+  transform: scale(1.05);
+}
+
+.app-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.app-buttons img {
+  width: 150px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.app-buttons img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer */
+footer {
+  padding: 1.5rem;
+  color: #333;
+}
+
+footer .social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+footer .social-icons img {
+  height: 35px;
+  transition: transform 0.3s, opacity 0.3s;
+  cursor: pointer;
+}
+
+footer .social-icons img:hover {
+  transform: scale(1.2);
+  opacity: 0.8;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-  body {
-    border-top: 8vw solid black;
-    border-left: 8vw solid black;
-    border-right: 8vw solid black;
+@media screen and (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
   }
 
-  .logo-image {
-    width: 60vw;
-    max-width: 500px;
+  .content {
+    margin-right: 0;
   }
 
-  .grozii-title {
-    font-size: 16vw;
-    letter-spacing: -0.8vw;
+  .image-container img {
+    width: 80%;
+    margin: 2rem auto;
   }
 
-  .logo-subtitle {
-    font-size: 4vw;
-    letter-spacing: 0.3vw;
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 0.8rem;
+    background-color: white;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 10px 10px;
+  }
+
+  .nav-links a {
+    font-size: 1.2rem;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  footer .social-icons {
+    justify-content: center;
+  }
+
+  .app-buttons {
+    justify-content: center;
   }
 }
 
-@media (max-width: 480px) {
-  body {
-    border-top: 10vw solid black;
-    border-left: 10vw solid black;
-    border-right: 10vw solid black;
+@media screen and (max-width: 480px) {
+  .hero-section .content h1 {
+    font-size: 2.5rem;
   }
 
-  .logo-image {
-    width: 70vw;
-    max-width: 300px;
+  .hero-section .content p {
+    font-size: 1rem;
   }
 
-  .grozii-title {
-    font-size: 20vw;
-    letter-spacing: -0.5vw;
+  .contact-button {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
   }
 
-  .logo-subtitle {
-    font-size: 5vw;
-    letter-spacing: 0.2vw;
+  .app-buttons img {
+    width: 120px;
   }
 }
